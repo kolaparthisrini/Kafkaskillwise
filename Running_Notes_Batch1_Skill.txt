@@ -1,0 +1,14 @@
+https://share.internxt.com/d/sh/folder/3647eb2ec03b928035b3/c958b723a5d30de54c016c42935b3d757ac4893b8fd5e185b9b87e22d6aa2204
+https://github.com/kolaparthisrini
+
+KAfka:
+============================
+To initiate kafka on local machine,we needd to follow below steps.
+1)Download zookeeper server.
+2)make necessary modifications in server config files,if necessary
+3)start the server and check wwhther server is running on the specified port.
+4)Download Kafka server to any drive except downloads folder.
+note: dont launch any server from downloads folder.
+5)Make necessary changes to kafka config and launch the kafka server parallely with zookeeper.
+=============================
+
