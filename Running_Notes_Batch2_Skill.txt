@@ -20,3 +20,101 @@ To initiate kafka on local machine,we needd to follow below steps.
 4)Download Kafka server to any drive except downloads folder.
 note: dont launch any server from downloads folder.
 5)Make necessary changes to kafka config and launch the kafka server parallely with zookeeper.
+=============================================Day2==============================
+Queue: it is a data structure/storage area which works on principle FIFO.
+
+queues will have only one producer and only 1 consumer at a time.
+
+producer--------->Queue------------>consumer
+Topic: it is a data structure/storage area/log file.
+
+Organization producer
+
+Data is money
+
+Consumer is employee.
+
+Topics will have any no of  producers and any number of consumers at a time.
+
+
+Topic and queues are not databases.It will store your data temporarly.
+Broker: means a kafka node/machine.
+Cluster/chain/group: Group of machines or servers or terminals or nodes
+machines can be at same location or in remote location as well.
+Https:it is secure protocol.
+
+Https= Http+SSl  layer
+
+when we say about ssl,we need to focus on security certificates.
+
+certificates are of 2 types.
+1)self signed: self signed certs are created by us using java.
+2)commercial: commercial certs are provided by vendors like godaddy,verisign,desicert,paypal,paytm,...etc.
+Note: In production or realtime,we use only commercial certs.No self signed.
+self signed are used for learning purpose.
+
+In this certs,we will have private security keys.
+kafka  3rd party GUI tools uses https protocls.
+
+replication:replication means duplicating the messages across network.
+Consumer: Anything which receives data is called as consumer
+consumer group:group of consumers is called as consumer group
+Producer: Anything which emits data is called as producer
+producer group:group of producers is called as Producer group.
+Vertical scaling:increasing no of cpus and memory
+Horizontal scaling:increasing more no of machines to existing cluster.
+Autoscaling: all cloud providers supports autoscalingie it can do horizonal or vertically automatically
+without manual involvement
+Encryption and decrytion rules:
+
+Encryption means converting plain text to cipher text is called as encryption.
+reverse is called as decryption.
+
+Once the encryption is done in one machine,decryption cannot be done in another machine.
+
+Apache kafka vs confluence kafka:
+Meta data: 
+Example: login credentials,ip address,its shape,color....etc.any thing which describes an object can be called as meta data.
+
+Table: dextara
+column:uname,pwd -string--8,empid--string--primary key constraint name
+
+Data:alphabets,numbers,symbols,characters,...etcdata will be in meaningless format.
+Information:processed data which is meaning full is called as information.
+tcp:it is n/w protocol for transfering data from client to server securely.
+kafka uses tcp protocol.
+policy:  set of rules/guidelinees which are  used to controll resources,their access from secure way.
+In kafka,kafka came up with security and retension policies.polices in any technology is written in either 
+xml or json or bson.
+bson is  more advanced than json.
+Ways to install kafka:
+1)on premises: https://kafka.apache.org/downloads
+
+Always go with GA(general availabilityie making it public) releases.dont uses canary release or beta releases for production environments.
+2)confluence kafka cloud
+https://www.confluent.io/lp/confluent-kafka/?utm_medium=sem&utm_source=google&utm_campaign=ch.sem_br.brand_tp.prs_tgt.confluent-brand_mt.xct_rgn.india_lng.eng_dv.all_con.confluent-kafka-general&utm_term=confluent%20kafka&creative=&device=c&placement=&gclid=CjwKCAiAxvGfBhB-EiwAMPakqmw1ZULbyBl-f_mDJMjTskBk-Vi6opVU9Rjhv0_VrGZghG7BjobyOhoCWB0QAvD_BwE
+
+Apache kafka vs confluent kafka?
+common things are both will do same work,same componets.
+
+Apache kafka is open source while onfluent kafka is commercial(confluent community license and enterprise license).
+apache kafka is for on-premises,but confluent kafka is for cloud.
+Confluent provides more no of tools and connectors by default,where in apache kafka additional things are not provided.s
+
+3)docker--on the top of containers ,we can install.
+4)VM---virtual machine
+5)other cloud providers--AWS,azure,gcp....etc
+============================================================================================
+We can start and stop zookeeper and kafka using bat files also.
+
+
+
+
+
+
+
+
+
+
+
+
