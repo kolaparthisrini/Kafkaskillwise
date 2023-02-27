@@ -11,4 +11,128 @@ To initiate kafka on local machine,we needd to follow below steps.
 note: dont launch any server from downloads folder.
 5)Make necessary changes to kafka config and launch the kafka server parallely with zookeeper.
 =============================
+Apache kafka or confluence kafka(https://www.confluent.io/get-started/)
+=>Apache kafka is open source and confluence kafka is cloud based and which is commercial for development.fl
+confluence comes with 2 types of licensing 1)confluence platform --free community edition
+                                           2)confluence platform enterprise---costly
+==> apache kafka has limited connectors and confluence has more no of connectors.
+==>no inbuilt tools for kafka,but confluence is power packed with multiple tools and GUI is available.
+=>security wise confluence is stronger.
+=>kafka does not have load balancers, but confluent has inbuilt load balancing.
+---------------------------------------------------------
+In how many ways can we install kafka?
+1)on-premises
+2)cloud---for cloud installations,we use AWS,GCP,AZURE,Alibab cloud ,Confluence...etc
+3)docker
+4)vm
+====>
+We need a server.
+IN IT,we do have 2 types of servers.
+1)Web Server-----Nginx,Tomcat,jetty ....etc
+
+Web server is software with below components.
+Web server= Http Engine + Catalina container+Jasper container+Middleware services
+
+2)Application server-------Weblogic,jboss,pramathi,Glashfish.......etc
+App server is software with below components.
+App server= Http Engine + Catalina container+Jasper container+MQq(messsaging queue) container+EJB(Enterprise java beans)
+container+Middleware services
+
+browser is called as "User-agent"
+>>Http is a stateless protocol.All web browsers use Http/https Protocol.
+What is commercial cert in https?
+
+http will not provide security.
+Https= http+SSl layer
+
+to enable ssl at server level,we need to use security certificates.There are 2 types of security certificates.
+1)self signed: self signed certs are the certs that we are going to create,ie any human can create it manullay using 
+java commands.These are not secure.we can use self for local testing.
+2)Commercial: certs thats are provided by vendors like go-daddy,verisign,cloudfare,paypal,paytmcerts,CA....etc.
+every certificate will have private keys,validity period,security algo and cert-chain,issueirs details.
+
+For production env and for dev ,we need to use commerial.
+==============================================>
+I wan to start my kafka server?
+We had installed offset software for monitoring.
+------------------------------>
+Connector:A connector is a software which is used for transferring data from source/origin point to destination.
+
+in the market we do have so many connectors.For kafka,we can use "kafka connector".
+
+java connector.For working on differnt types of connectors,you need to learn ESB which 
+is Mulesoft,Apache camel,tibco,sap...
+
+ESB is a architecture---Stands for enterprise service bus.ESB comes with some design patterns for
+ which vendors like mule,tibco,apachecame up with implementations.
+ 
+ In short is is group of rules ,regulations which are mainly for integrating multiple apps which are heterogenious.
+
+Broker/Mediator: Broker means a node or a server or an instance or machine
+Transformation:converting data from one form to another.
+Example: xml to json convertion and vice versa
+---------------
+Producer:any thing which emits or gives data to destination is called as producers.
+Consumer:who will accept data.
+Queue: queue is a data structure/storage area with the priciple, FIFO---first in first out.
+To implement QUEUE ,we need one producer and only one consumer
+Message: any thing which is in binary format.Message can be of any format like xml,json,bson...etc
+Topic:Topic can store your data temporarily like queue.To implement Topic ,we can have multiple producers and multiple  consumers.
+
+producer----------->QUEUE------------>Consumer
+producer----------->TOPIC------------>Consumer1
+						  ----------->Consumer2	
+						 
+Apache kafa follows topic implementation.
+==>Cluster: group of brokers/broker instances is called as cluster.
+As per the kafka best practices,in a cluster we need have a minimum of 3 brokers or even need to have odd no of brokers
+in real time .
+->kafka is stateless.So it uses Zookeeper to state management.
+
+Meta data:any thing which describes an object is called meta data.ie its name,shaze,size...etc.
+What is Event?
+do u have listner?listner is a s/w pgm which responds to events.
+Consumer group: group of consumers are called as consumer group.Every group has a name which is userdefined.
+Producer group: group of producers are called as producer group.Every group has a name which is userdefined.
+
+use of TCP protocol? it is a standard for secure data transmission between client and server.
+kafka uses tcp protocol.
+
+Encryption?
+decryption?
+
+can i perform encryption in one machine and decryption in another machine?
+ans) no
+encryption algo will change from machine to machine.so encryption cannot be done in one  machine and
+ decryption cannot be done in another machine.
+ 
+ compressing techniqs: use gzip and deflatter techniqs
+
+replication means data duplication.
+Stateless protocol:
+when ever we request fb.com/google  from browser,what will happen?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
