@@ -11,10 +11,12 @@ To initiate kafka on local machine,we needd to follow below steps.
 note: dont launch any server from downloads folder.
 5)Make necessary changes to kafka config and launch the kafka server parallely with zookeeper.
 =============================
+DAy2
+----------------
 Apache kafka or confluence kafka(https://www.confluent.io/get-started/)
 =>Apache kafka is open source and confluence kafka is cloud based and which is commercial for development.fl
 confluence comes with 2 types of licensing 1)confluence platform --free community edition
-                                           2)confluence platform enterprise---costly
+                                           2)confluence platform enterprise---costly---mainly for production environments.
 ==> apache kafka has limited connectors and confluence has more no of connectors.
 ==>no inbuilt tools for kafka,but confluence is power packed with multiple tools and GUI is available.
 =>security wise confluence is stronger.
@@ -35,7 +37,7 @@ Web server= Http Engine + Catalina container+Jasper container+Middleware service
 
 2)Application server-------Weblogic,jboss,pramathi,Glashfish.......etc
 App server is software with below components.
-App server= Http Engine + Catalina container+Jasper container+MQq(messsaging queue) container+EJB(Enterprise java beans)
+App server= Http Engine + Catalina container+Jasper container+MQ(messsaging queue) container+EJB(Enterprise java beans)
 container+Middleware services
 
 browser is called as "User-agent"
@@ -73,9 +75,22 @@ Transformation:converting data from one form to another.
 Example: xml to json convertion and vice versa
 ---------------
 Producer:any thing which emits or gives data to destination is called as producers.
+a producer can be an application,device/IOT device,sensors,api,log file,webservice,db or any data file...etc.
+
+youtube-----streaming or live streaming
+
 Consumer:who will accept data.
-Queue: queue is a data structure/storage area with the priciple, FIFO---first in first out.
+a consumer can be a device,webservice,app,server,machine...etc.
+
+
+Queue: queue is a data structure/storage area/db with the priciple, FIFO---first in first out.
 To implement QUEUE ,we need one producer and only one consumer
+P----M---Q---R
+
+Receiver once received he need to send and Acknowledgement.
+
+Every queue has policys.In this policy(xml/json) we are going define how many days message shld stay in queue.
+
 Message: any thing which is in binary format.Message can be of any format like xml,json,bson...etc
 Topic:Topic can store your data temporarily like queue.To implement Topic ,we can have multiple producers and multiple  consumers.
 
@@ -95,6 +110,10 @@ do u have listner?listner is a s/w pgm which responds to events.
 Consumer group: group of consumers are called as consumer group.Every group has a name which is userdefined.
 Producer group: group of producers are called as producer group.Every group has a name which is userdefined.
 
+always group of producers shld have some unique name or ID
+always group of Consumers shld have some unique name or ID
+
+
 use of TCP protocol? it is a standard for secure data transmission between client and server.
 kafka uses tcp protocol.
 
@@ -111,7 +130,23 @@ encryption algo will change from machine to machine.so encryption cannot be done
 replication means data duplication.
 Stateless protocol:
 when ever we request fb.com/google  from browser,what will happen?
+=======================================
+Day3
+----------------
+In networking,to make a cluster we need to have atleast 1 node.
+In kafka,to make a cluster as per the best practices,we need to have a min of 3 or odd no.
 
+
+Apache nifi:
+used for data routing ,tranformations(example: xml to json or vice versa) and analytics.
+
+Autoscaling:  in othe cloud computing vendor dynamically adjust the resources based on demand from customers.
+Note:autoscaling feature is available mainly in clouds like AWS,azure,GCP....etc.
+
+
+What is kafka?
+kafka Architectures:
+Workflow of kafka:
 
 
 
