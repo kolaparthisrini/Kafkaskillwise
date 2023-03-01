@@ -39,7 +39,8 @@ Topics will have any no of  producers and any number of consumers at a time.
 
 Topic and queues are not databases.It will store your data temporarly.
 Broker: means a kafka node/machine.
-Cluster/chain/group: Group of machines or servers or terminals or nodes
+Cluster/chain/group: Group of machines or servers or terminals or nodes.In kafka,to create a cluster,as per
+ the best practices,we need to have atleast 3 nodes.
 machines can be at same location or in remote location as well.
 Https:it is secure protocol.
 
@@ -104,8 +105,127 @@ Confluent provides more no of tools and connectors by default,where in apache ka
 3)docker--on the top of containers ,we can install.
 4)VM---virtual machine
 5)other cloud providers--AWS,azure,gcp....etc
-============================================================================================
 We can start and stop zookeeper and kafka using bat files also.
+============================================================================================
+===============================================================================================
+Day3
+----------
+Architectures
+workflows
+Kafka admin activities from CLI
+>>serialization:means saving SBI of an object into temporary storage files is called as Serialization.
+Every object will have SBI
+S-state
+B-behaviour---means its functionality
+I-identity-name of the object
+
+when i click on "pause".
+
+deserialization: mean sit is like "resuming" to previous state.
+>>>>>>
+Dmart--------sales data
+     --------Purchases data
+	 ---------salary data
+	 ---------other data 
+	 ----------Transporation data....etc------------------>Data center
+	                                                         ----->Audit purpose or knowing the financial statistics...etc
+
+You need to load Producer API,consumer API,Broker API.
+================================================
+Day4
+--------------------
+1. List Topics: kafka-topics.bat --list --zookeeper localhost:2181 
+2. Describe Topic: kafka-topics.bat --describe --zookeeper localhost:2181 --topic [Topic Name] 
+3. Read messages from beginning: kafka-console-consumer.bat --zookeeper localhost:2181 --topic [Topic Name] --from-beginning
+kafka-console-consumer.bat --zookeeper localhost:2181 --topic [Topic Name] --from-beginning
+Points to remember:
+========================
+>IN Kafka Every message has key and value.keys are unqiue and messgaes can be same.Offset tool uses hexadecimal format to
+push the messages to kafka topic.
+>always partitions numbering starts from 0.
+>Always when we create a topic by default one partition will be created.always partition number starts with 0.
+>It is not a good idea to change your partitions after creating topic
+>no of partitions should not be infifnity.
+per cluster(min of 3 brokers and max of 50), we can have 2lakhs partitons.
+per broker,we can have 4k partitions.
+>Unnecessarily dont delete topics.
+>There are some known issues in windows os while droping a topic.
+>prior to kafka 2.12.0 version,we need to use --zookeeper,in the place of --bootstrap-server.
+-------------------
+>  by default brokerid wikll be 0.We can modify the broker id from the kafka configuration file ie server.properties file.
+>Default port no of kafka is 9092
+>broker name will be your hostname,ie computer name by default.
+===============
+srini,where is my topic created ?i want to see that?
+ans)Kafka stores the topic messages on the top of your hardisk in the form of logs.
+new Messages will be appended to the end of your log file.
+even partitions will be stored on the top of ur machine ie in your topic location.
+>>>>>>>>>>When we say a replication/duplicate of 2,then how many brokers shld be there?
+ans)2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------
+Day4
+------
+Configurations of kafka
+about partions
+Replications
+insyncreplicas
+multibroker architectures
+
 
 
 
