@@ -137,7 +137,7 @@ Day4
 1. List Topics: kafka-topics.bat --list --zookeeper localhost:2181 
 2. Describe Topic: kafka-topics.bat --describe --zookeeper localhost:2181 --topic [Topic Name] 
 3. Read messages from beginning: kafka-console-consumer.bat --zookeeper localhost:2181 --topic [Topic Name] --from-beginning
-kafka-console-consumer.bat --zookeeper localhost:2181 --topic [Topic Name] --from-beginning
+kafka-console-consumer.bat --zookeeper localhost:2181 --topic [Topic Name] --from-beginning33
 Points to remember:
 ========================
 >IN Kafka Every message has key and value.keys are unqiue and messgaes can be same.Offset tool uses hexadecimal format to
@@ -162,6 +162,75 @@ new Messages will be appended to the end of your log file.
 even partitions will be stored on the top of ur machine ie in your topic location.
 >>>>>>>>>>When we say a replication/duplicate of 2,then how many brokers shld be there?
 ans)2
+================================================================
+Day5
+----------
+Single node cluster===>p-->topic--->consumer>>>>one to one
+Multi-Node cluster:we are going nodes >2.
+these nodes can be in same machine or in another machines.
+To access kafka via API,we need to use https protocl but not http,for which we need to purchase commercial certs.
+>
+A db---k producer----->topic---->consumer----> b db
+
+kafka connect sink:sink is used for transferring data from topic to ouput systems or external sources.
+kafka connect source: this is iused for tranfering data from input streams to kafka topic.
+>for log aggregations,we use kafka.
+>Once the message arrives in topic ,we cannot modify that message.
+>no of partitions nd consumers should be same,if no of consumers are more,then the extra consumer will be in waiting state.
+>if less no of consumers and more no of producers,then there are no issues in the operations.
+>Broker  
+   ============>Topic 
+           ==============>Partition
+		      ==========================>Segment
+			  
+			  always partition starts with 1 and each partion will start from 0,which we are calling as offset or index.
+>>If we awant to maintain order for your messages,then we need to provide keys to messages.
+
+===>Within Same  group:
+2  consumers within same  cannot consume same message from partition.
+
+con1,con2---grp1
+con3,con4----grp2
+
+===>Within different  group:
+
+2 consumers in 2 groups can consume the same message from partition.
+
+==============================
+topic--->partition-->segment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
