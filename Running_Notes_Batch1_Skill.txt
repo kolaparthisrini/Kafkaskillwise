@@ -143,10 +143,121 @@ used for data routing ,tranformations(example: xml to json or vice versa) and an
 Autoscaling:  in othe cloud computing vendor dynamically adjust the resources based on demand from customers.
 Note:autoscaling feature is available mainly in clouds like AWS,azure,GCP....etc.
 
+kafka Architectures
+========================
+Day4
+-----------------------------
+Devops or devsecops
 
-What is kafka?
-kafka Architectures:
-Workflow of kafka:
+Stream: data in motion or continous flow of data .Data transmission will occur in bytes from source to destination.
+
+Observations and resolutions today:
+........................................
+after the session,associates are not closing the zookeeper and kafka properly.
+sol) Close the servers in below order:
+d/sh/folder/3647eb2ec03b928035b3/c958b723a5d30de54c016c42935b3d757ac4893b8fd5e185b9b87e22d6aa2204
+Closing Order : First disconnect from cluster in Offset tool and then close it
+                                                     --->Producer
+													    --->Consumer
+														      --->Kafka
+															       --->zookeeper
+																     ---->RD
+
+Dont perform hard exit.PErform graceful exit.
+
+Log folder path locations are invalid.:Use \\ in the place of \.
+always create folder for logs and update the same in config files.
+
+10PM
+2:13PM---BROKER1 CRASHED
+
+BUT MORE OF CONSUMERS WANT DATA AT 2:15PM.IF U PROVIDE 24/7 AVAILABILITY OF TOPICS,THEN UR BUSINESS CAN BE GROWN.
+
+IF REPLICATION IS 3,THEN HOW MANY BROKERS ARE NEEDED?
+ANS)3
+IF REPLICATION IS 20,THEN HOW MANY BROKERS ARE NEEDED?
+ANS)20
+
+REPLICATION IS COSTLY PROCESS.
+
+KAFKA IS fault TOLERANT.
+ZOOKEEPER-----ETCD,DOCKER,HASICORP,HYSTRIX,CONSUL....
+
+iN LATEST VERSIONS OF KAFKA,IE 3.X VERSIONS ONWARDS,WE CAN USE "kraft" AS A REPLACE MENT FOR ZOOKEEPER.
+-------------------------------------------------------------------------------------
+Day5
+========
+>The connector that takes data from a Producer and feeds them into a topic is called source connector. The connector 
+that takes data from a Topic and delivers them to a Consumer is called Sink Connector.
+>Single Node cluster: a cluster with single node/broker in ur local machine.
+>Multi-Node cluster:a cluster with more than 1 node/broker in ur in your network.
+when data is huge,
+multiple consumers and topics are needed
+need more replicas for fault tolerant
+>Multi-node cluster can be created in a single machine or in multiple machines or on cloud and then create a cluster
+>by default "tmp"
+ location will be  enabled in kafka.It is devops engineers responsibilityt to change from default location.
+>Every broker will have an id.Bydefault broker will have id as 0.We can change the id as per requirement.
+>No 2 brokers can have same id.
+>By default brokwer will run on port no 9092.Wan modify as per ur project.
+0007----wrong
+8989
+8000,7000
+Always port no shld be of 4 digits.
+>By default tmp folder is used by your os.
+D:\\Kafka\\Multi_node\\zookeeper_logs
+An in-sync replica (ISR) is a broker that has the latest data for a given partition.
+
+kafka-topics.bat --zookeeper localhost:9093,localhost:7094 --describe --topic srinivas
+
+----------------------------
+Requirement1:
+
+I am having some data in file 1.i want to transfer trhe data from file 1 to topic "file" and from there
+data shld be transfred to consumer "cons"
+
+producer: file1.txt--------->Topic:file1------>consumer:output.txt
+=====================
+>,<,/,\,||,|---are called as special operators or pipes in os.This commands differs from os to os based on manufaturer or vendor.
+
+kafka connector
+cin<<
+cout>>
+------------------
+partitions and segments
+Zookeeper algo and its role
+replication exercise
+------------------
+
+Monday: policies,kafka theoryie configs of broker and topic
+Tues: security and application creations
+---------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
