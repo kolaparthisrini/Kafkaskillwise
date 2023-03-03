@@ -226,12 +226,101 @@ cout>>
 ------------------
 partitions and segments
 Zookeeper algo and its role
-replication exercise
+replication exercisec
 ------------------
 
 Monday: policies,kafka theoryie configs of broker and topic
 Tues: security and application creations
+
+if you have N + 1 consumers for a topic with N partitions, then the first N consumers will be assigned a partition, and the remaining consumer will be idle, unless one of the N consumers fails, then 
+the waiting consumer will be assigned its partition. This is a good strategy to implement a hot failover.
 ---------------
+# Partitions = Desired Throughput / Partition Speed
+If your consumer group had 3 consumers and you add one new consumer then it will sit ideal. No of consumers in consumer-group <= number of partitions.
+kafka-console-consumer --bootstrap-server localhost:9092 --topic insurance --from-beginning --group group 1
+==================================================================
+Day 6
+--------------------
+Multi node: In multinode, nodes can be in same location/pc or in different pc/cluster.
+if nodes are across n/ws,how ddo we monitor?
+Jvisual vm(JMX)/java melody can be used to monitor local cluster/single node cluster.
+datadog/appdynamics/conducktor can be used to monitor multinode cluster.
+quoram is for zookeeper.
+>We need to install conducktor for desktop edition.
+
+ISR,replication factor
+
+Rf shld be equal to brokers.
+
+In networking,incoming request is called as "ingress" and outgoing response is called as "engress"
+>what if leader is crashed because of technical reasons?
+ans)one of the slave shld be act as leader.
+Now the question is who will decide the master?
+how do kafa now how many slaves are active and how many are dead/crashed/not working?
+who will scan ingress traffic?
+Who will deligate traffic to slatves?
+He will also load balancing.he can act as Gateway to ur cluster
+for all above,ans is "ZOOKEEPER".
+zookeeper performs node management.zookeeper uses election algorithms to elect a node as a leader.
+
+zookeeper maintains meta data of leader and slaves in hashmap.
+
+slave info means ipaddress,cluster id,slave name,status.
+
+zookeeper uses heartbeat signals to find whether the slaves are active or dead.
+zookeeper send heart beat signals for every 100ms.
+
+for election algorithm,inputs will be ipaddress,turnaround time,nearest node,mac,active time of node,traffic ...etc
+We need to use "WebUI" tools.
+>>group of zookeeper nodes is called as "Ensemble".In zookeeper eack node called as znode.
+===================
+===>Within Same  group:
+2  consumers within same group cannot consume same message from partition.
+
+con1,con2---grp1
+con3,con4----grp2
+
+===>Within different  group:
+
+2 consumers in 2 groups can consume the same message from partition.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
