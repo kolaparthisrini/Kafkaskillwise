@@ -199,6 +199,37 @@ con3,con4----grp2
 ==============================
 topic--->partition-->segment
 
+if you have N + 1 consumers for a topic with N partitions, then the first N consumers will be assigned a partition, and the remaining consumer will be idle, unless one of the N consumers fails,
+then the waiting consumer will be assigned its partition. This is a good strategy to implement a hot failover.
+==========================================================
+Day 6:
+-------------------
+>Monitoring of zookeeper or kafka can be done using below tools.
+Jvisual vm or JMX
+datadog
+offset explorer-commercial
+Appdynamics---best
+new relic
+conducktor
+site 24*7.......etc
+
+>>zookeeper doent have any UI for capturing or views the zookeeper components.
+>in reality,we willl never have zookeeper and kafka on same machine.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
